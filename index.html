@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background with Heading and Timeline</title>
+    <style>
+        /* Apply some basic styles to the body to remove margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Hide horizontal scrollbars */
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center;
+            
+        }
+
+        /* Set the video to cover the entire viewport */
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the video covers the entire viewport */
+            z-index: -1; /* Set a lower z-index to keep it in the background */
+        }
+
+        /* Create a circular frame */
+        .circular-frame {
+            position: relative;
+            z-index: 1; /* Ensure the circular frame appears above the video */
+            width: 200px; /* Adjust the size of the circular frame */
+            height: 200px; /* Adjust the size of the circular frame */
+            border-radius: 50%; /* Create a circular shape */
+            overflow: hidden;
+            border: 5px solid #fff; /* Add a white border to the frame */
+            margin-top: 20px; /* Move the circular frame 20px from the top */
+        }
+
+        /* Style the image within the circular frame */
+        .circular-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the circular frame */
+        }
+
+        /* Style for the heading */
+        .heading-container {
+            position: absolute;
+            top: 40%; /* Position the heading in the vertical center */
+            left: 50%; /* Position the heading in the horizontal center */
+            transform: translate(-50%, -50%); /* Center the heading */
+            text-align: center;
+            z-index: 2; /* Ensure the heading appears above the video */
+            color: #fff; /* Text color */
+        }
+
+        /* Style for the LinkedIn circular button */
+        .linkedin-button {
+            position: absolute;
+            bottom: 50px; /* Adjust the vertical position of the button */
+            right: 20px; /* Adjust the horizontal position of the button */
+            z-index: 2; /* Set the z-index value to appear above the video */
+            width: 50px; /* Adjust the width of the button */
+            height: 50px; /* Adjust the height of the button */
+            background-color: transparent; /* LinkedIn blue color */
+            border-radius: 1%; /* Create a circular shape */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none; /* Remove underlines from the link */
+            overflow: hidden;
+            transition: background-color 0.3s ease; /* Smooth transition effect */
+        }
+
+        .linkedin-button img {
+            width: 30px; /* Adjust the size of the LinkedIn icon */
+            height: 30px; /* Adjust the size of the LinkedIn icon */
+            vertical-align: middle; /* Align the icon vertically in the button */
+            margin-right: 10px; /* Add some spacing between the icon and text (if needed) */
+        }
+
+        .linkedin-button:hover {
+            background-color: #ffffff; /* Change the background color on hover */
+        }
+
+        /* Style for the GitHub circular button */
+        .github-button {
+            position: absolute;
+            bottom: 50px; /* Adjust the vertical position of the button */
+            right: 80px; /* Adjust the horizontal position of the button */
+            z-index: 2; /* Set the z-index value to appear above the video */
+            width: 50px; /* Adjust the width of the button */
+            height: 50px; /* Adjust the height of the button */
+            background-color: transparent; /* GitHub color */
+            border-radius: 1%; /* Create a circular shape */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none; /* Remove underlines from the link */
+            overflow: hidden;
+            transition: background-color 0.3s ease; /* Smooth transition effect */
+        }
+
+        .github-button img {
+            width: 30px; /* Adjust the size of the GitHub icon */
+            height: 30px; /* Adjust the size of the GitHub icon */
+            vertical-align: middle; /* Align the icon vertically in the button */
+            margin-right: 10px; /* Add some spacing between the icon and text (if needed) */
+        }
+        .gmail-button {
+            position: absolute;
+            bottom: 50px; /* Adjust the vertical position of the button */
+            right: 90px; /* Adjust the horizontal position of the button */
+            z-index: 2; /* Set the z-index value to appear above the video */
+            width: 50px; /* Adjust the width of the button */
+            height: 50px; /* Adjust the height of the button */
+            background-color: transparent; /* GitHub color */
+            border-radius: 1%; /* Create a circular shape */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none; /* Remove underlines from the link */
+            overflow: hidden;
+            transition: background-color 0.3s ease; /* Smooth transition effect */
+        }
+
+        .gmail-button img {
+            width: 30px; /* Adjust the size of the GitHub icon */
+            height: 30px; /* Adjust the size of the GitHub icon */
+            vertical-align: middle; /* Align the icon vertically in the button */
+            margin-right: 10px; /* Add some spacing between the icon and text (if needed) */
+        }
+
+        .gmail-button:hover {
+            background-color: #ffffff; /* Change the background color on hover */
+        }
+
+        .github-button:hover {
+            background-color: #ffffff; /* Change the background color on hover */
+        }
+
+        /* Style for the aboutme container */
+        .aboutme {
+            top:500px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 150px; /* Add some margin from the aboutme container */
+        }
+
+        .aboutme-item {
+            
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .aboutme-item:last-child {
+            margin-bottom: 0;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <video autoplay loop muted>
+        <source src="tech2.mp4" type="video/mp4">
+        <!-- Add additional <source> elements for other video formats -->
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Circular frame for the photo -->
+    <div class="circular-frame">
+        <img src="port.jpg" alt="Your Photo">
+    </div>
+
+    <!-- Heading -->
+    <div class="heading-container">
+        <h1>Mohak  Gupta</h1>
+        <h2>Student , Developer</h2>
+    </div>
+
+    <!-- LinkedIn Button -->
+    <div class="linkedin-button">
+        <a href="https://www.linkedin.com/in/mohak-gupta-191329255/" target="_blank">
+            <img src="lk2.jpg" alt="LinkedIn Profile">
+        </a>
+    </div>
+
+    <!-- GitHub Button -->
+    <div class="github-button">
+        <a href="https://github.com/mohak0981" target="_blank">
+            <img src="GIT1.png" alt="GitHub Profile">
+
+        </a>
+    </div>
+
+    <!-- About Me Container -->
+    <div class="aboutme" id="aboutme">
+        <div class="aboutme-item">
+            <div class="jss2">
+                <p><strong>About Me</strong></p>
+                <p>I'm Mohak Gupta from India<br>
+                I love programming, as well as swimming, taking photos and learning new things!<br>
+                Feel free to get in touch .</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
