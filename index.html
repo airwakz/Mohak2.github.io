@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>    Portfolio    </title>
+    <title>Video Background with Heading and Timeline</title>
     <style>
         /* Apply some basic styles to the body to remove margin and padding */
         body {
@@ -164,7 +164,8 @@
         .aboutme-item:last-child {
             margin-bottom: 0;
         }
-       
+
+
         
     </style>
 </head>
@@ -192,6 +193,13 @@
             <img src="lk2.jpg" alt="LinkedIn Profile">
         </a>
     </div>
+    <button id="Projects">SportsMania</button>
+
+    <script>
+        document.getElementById("Projects").addEventListener("click", function() {
+            window.open("index1.html", "_blank");
+        });
+    </script>
 
     <!-- GitHub Button -->
     <div class="github-button">
@@ -212,5 +220,6 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>
