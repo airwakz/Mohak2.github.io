@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="login.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="login-status"></p>
+    </div>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Simulate a simple authentication check (replace with your actual authentication logic)
+            if (username === "your_username" && password === "your_password") {
+                document.getElementById("login-status").innerText = "Login successful!";
+                document.getElementById("login-status").style.color = "green";
+                setTimeout(() => {
+                    window.location.href = "dashboard.html";
+                }, 1000);
+            } else {
+                document.getElementById("login-status").innerText = "Login failed. Please check your credentials.";
+            }
+        });
+    </script>
+</body>
+</html>
