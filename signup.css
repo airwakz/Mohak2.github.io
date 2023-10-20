@@ -1,0 +1,91 @@
+/* signup.css */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0); 
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    color: #FC6A03; 
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #FC6A03; /* Set menu text color */
+    text-decoration: none;
+}
+
+.signup-container {
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #fff;
+    width: 400px; /* Adjust the width as needed */
+    margin-top: 20px;
+}
+
+/* Styles for input fields and button */
+input, button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #fff; 
+    border-radius: 5px; 
+}
+
+input {
+    background-color: #333;
+    color: #fff;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
