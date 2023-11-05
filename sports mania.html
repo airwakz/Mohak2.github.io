@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sports Mania</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #header {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        #pictures {
+            text-align: center;
+            margin-top: 100px;
+        }
+        #pictures img {
+            width: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <p id="userName">Your Name</p>
+    </div>
+    <div id="pictures">
+        <input type="text" id="image1" placeholder="Image URL 1">
+        <input type="text" id="image2" placeholder="Image URL 2">
+        <input type="text" id="image3" placeholder="Image URL 3">
+        <input type="text" id="image4" placeholder="Image URL 4">
+        <input type="text" id="image5" placeholder="Image URL 5">
+        <input type="text" id="image6" placeholder="Image URL 6">
+        <input type="file" id="upload" accept="image/*" multiple>
+    </div>
+    <script>
+        // JavaScript to replace the user's name
+        var userName = prompt("Please enter your name:");
+        if (userName) {
+            document.getElementById("userName").textContent = userName;
+        }
+        
+        // JavaScript to load user-uploaded images
+        document.getElementById("upload").addEventListener("change", function(event) {
+            var files = event.target.files;
+            var imageContainer = document.getElementById("pictures");
+            
+            for (var i = 0; i < files.length; i++) {
+                if (i < 6) {
+                    var imageElement = document.createElement("img");
+                    imageElement.src = URL.createObjectURL(files[i]);
+                    imageElement.alt = "User Image " + (i + 1);
+                    imageContainer.appendChild(imageElement);
+                } else {
+                    alert("You can upload a maximum of 6 images.");
+                    break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+  
